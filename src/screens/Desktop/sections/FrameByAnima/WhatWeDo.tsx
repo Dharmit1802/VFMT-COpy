@@ -114,7 +114,7 @@ function WhatWeDo() {
                             onClick={handlePrev}
                             disabled={isPrevDisabled}
                             className={`w-[50px] lg:w-[74px] h-[50px] lg:h-[74px] rounded-full border-2 border-white text-white text-3xl lg:text-[45px] flex items-center justify-center text-center transition-transform transition-* duration-150 ease-in-out
-    ${isPrevDisabled ? 'opacity-40 cursor-default bg-transparent' : 'hover:bg-blue-600 active:scale-95 active:bg-blue-700 cursor-pointer'}`}
+    ${isPrevDisabled ? 'opacity-40 cursor-default' : 'hover:bg-blue-600 active:scale-95 active:bg-blue-700 cursor-pointer'}`}
                             aria-label="Previous"
                             type="button"
                         >
@@ -125,7 +125,7 @@ function WhatWeDo() {
                             onClick={handleNext}
                             disabled={isNextDisabled}
                             className={`w-[50px] lg:w-[74px] h-[50px] lg:h-[74px] rounded-full border-2 border-white text-white text-3xl lg:text-[45px] flex items-center justify-center text-center transition-transform transition-* duration-150 ease-in-out
-    ${isNextDisabled ? 'opacity-40 cursor-default bg-transparent' : 'hover:bg-blue-600 active:scale-95 active:bg-blue-700 cursor-pointer'}`}
+    ${isNextDisabled ? 'opacity-40 cursor-default' : 'hover:bg-blue-600 active:scale-95 active:bg-blue-700 cursor-pointer'}`}
                             aria-label="Next"
                             type="button"
                         >
@@ -159,12 +159,13 @@ function WhatWeDo() {
                     ))}
                 </Slider>
 
+
                 <div className="inline-flex lg:hidden justify-center w-full items-center gap-[26px]">
                     <button
                         onClick={handlePrev}
                         disabled={isPrevDisabled}
-                        className={`w-[50px] lg:w-[74px] h-[50px] lg:h-[74px] rounded-full border-2 border-white text-white text-3xl lg:text-[45px] flex items-center justify-center text-center transition-transform transition-* duration-150 ease-in-out
-    ${isPrevDisabled ? 'opacity-40 cursor-default bg-transparent' : 'hover:bg-blue-600 active:scale-95 active:bg-blue-700 cursor-pointer'}`}
+                        className={`w-[50px] lg:w-[74px] h-[50px] lg:h-[74px] rounded-full border-2 border-white text-white text-3xl lg:text-[45px] flex items-center justify-center text-center transition-transform duration-150 ease-in-out
+        ${isPrevDisabled ? 'opacity-40 cursor-default' : 'cursor-pointer bg-white/10 lg:hover:bg-blue-600 active:bg-blue-700 active:scale-95'}`}
                         aria-label="Previous"
                         type="button"
                     >
@@ -174,14 +175,15 @@ function WhatWeDo() {
                     <button
                         onClick={handleNext}
                         disabled={isNextDisabled}
-                        className={`w-[50px] lg:w-[74px] h-[50px] lg:h-[74px] rounded-full border-2 border-white text-white text-3xl lg:text-[45px] flex items-center justify-center text-center transition-transform transition-* duration-150 ease-in-out
-    ${isNextDisabled ? 'opacity-40 cursor-default bg-transparent' : 'hover:bg-blue-600 active:scale-95 active:bg-blue-700 cursor-pointer'}`}
+                        className={`w-[50px] lg:w-[74px] h-[50px] lg:h-[74px] rounded-full border-2 border-white text-white text-3xl lg:text-[45px] flex items-center justify-center text-center transition-transform duration-150 ease-in-out
+        ${isNextDisabled ? 'opacity-40 cursor-default' : 'cursor-pointer bg-white/10 lg:hover:bg-blue-600 active:bg-blue-700 active:scale-95'}`}
                         aria-label="Next"
                         type="button"
                     >
                         <ChevronRight />
                     </button>
                 </div>
+
             </div>
         </section>
     );
