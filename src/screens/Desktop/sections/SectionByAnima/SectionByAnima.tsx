@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+
+import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Separator } from "../../../../components/ui/separator";
-import { Menu } from "lucide-react";
 
 export const SectionByAnima = (): JSX.Element => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     "HOME",
@@ -16,6 +13,24 @@ export const SectionByAnima = (): JSX.Element => {
     "INVESTORS",
   ];
 
+  const stats = [
+    {
+      value: "$25M+",
+      label: "Managed Assets",
+    },
+    {
+      value: "225+",
+      label: "Housing Units",
+    },
+    {
+      value: "225+",
+      label: "Properties Refurbished",
+    },
+    {
+      value: "15+Yrs",
+      label: "Investment Experience",
+    },
+  ];
 
   return (
 
@@ -102,132 +117,32 @@ export const SectionByAnima = (): JSX.Element => {
 
 
             <div
-              className="rounded-t-[9.94px] md:rounded-t-[40px] py-[6.96px] px-[17.13px] md:px-[85px] lg:py-[32px] bg-white w-full max-w-full top-[453px] left-[16px] sm:top-0 sm:left-0"
-
+              className="rounded-t-[9.94px] lg:rounded-t-[40px] py-[6.96px] px-[17.13px] lg:px-[85px] xl:py-[32px] bg-white w-full max-w-full top-[453px] left-[16px] sm:top-0 sm:left-0"
             >
-              <div className="w-full flex flex-row gap-[10px] sm:gap-[40px] justify-around items-center h-full">
-                {/* Item 1 */}
-                <div className="flex flex-col items-center min-w-[60px] sm:min-w-[100px]">
-                  <span
-                    className="text-[16.16px] sm:text-[65px] font-bold leading-[18.89px] sm:leading-[76px] text-center"
-                    style={{
-                      fontFamily: "Inter",
-                      letterSpacing: "0%",
-                      color: "#1763DB",
-                    }}
-                  >
-                    $25M+
-                  </span>
-                  <span
-                    className="text-[5.59px] sm:text-[22.47px] font-medium leading-[6.15px] sm:leading-[24.72px] text-center"
-                    style={{
-                      fontFamily: "Inter",
-                      letterSpacing: "-3%",
-                      color: "#C4C4C4",
-                    }}
-                  >
-                    Managed Assets
-                  </span>
-                </div>
+              <div className="w-full flex flex-row gap-[10px] sm:gap-[20px] md:gap-[30px] lg:gap-[40px] justify-around items-center h-full">
+                {stats.map((item, index) => (
+                  <React.Fragment key={index}>
+                    <div className="flex flex-col items-center min-w-[60px] sm:min-w-[80px] md:min-w-[90px] lg:min-w-[100px]">
+                      <span className="text-[16.16px] sm:text-[28px] md:text-[45px] lg:text-[65px] font-bold leading-[18.89px] sm:leading-[34px] md:leading-[55px] lg:leading-[76px] text-center text-[#1763DB] font-['Inter']">
+                        {item.value}
+                      </span>
+                      <span className="text-[5.59px] sm:text-[10px] md:text-[16px] lg:text-[22.47px] font-medium leading-[6.15px] sm:leading-[11px] md:leading-[17px] lg:leading-[24.72px] text-center text-[#C4C4C4] font-['Inter'] tracking-[-3%]">
+                        {item.label}
+                      </span>
+                    </div>
 
-                {/* Divider */}
-                <div
-                  className="w-[1.61px] h-[60px] sm:h-[121.04px] flex-none flex-grow-0"
-                  style={{
-                    background:
-                      "radial-gradient(50% 50% at 50% 50%, #1763DB 0%, rgba(255, 255, 255, 0) 100%)",
-                  }}
-                ></div>
-
-                {/* Item 2 */}
-                <div className="flex flex-col items-center min-w-[60px] sm:min-w-[100px]">
-                  <span
-                    className="text-[16.16px] sm:text-[65px] font-bold leading-[18.89px] sm:leading-[76px] text-center"
-                    style={{
-                      fontFamily: "Inter",
-                      letterSpacing: "0%",
-                      color: "#1763DB",
-                    }}
-                  >
-                    225+
-                  </span>
-                  <span
-                    className="text-[5.59px] sm:text-[22.47px] font-medium leading-[6.15px] sm:leading-[24.72px] text-center"
-                    style={{
-                      fontFamily: "Inter",
-                      letterSpacing: "-3%",
-                      color: "#C4C4C4",
-                    }}
-                  >
-                    Housing Units
-                  </span>
-                </div>
-
-                {/* Divider */}
-                <div
-                  className="w-[1.61px] h-[60px] sm:h-[121.04px] flex-none flex-grow-0"
-                  style={{
-                    background:
-                      "radial-gradient(50% 50% at 50% 50%, #1763DB 0%, rgba(255, 255, 255, 0) 100%)",
-                  }}
-                ></div>
-
-                {/* Item 3 */}
-                <div className="flex flex-col items-center min-w-[60px] sm:min-w-[100px]">
-                  <span
-                    className="text-[16.16px] sm:text-[65px] font-bold leading-[18.89px] sm:leading-[76px] text-center"
-                    style={{
-                      fontFamily: "Inter",
-                      letterSpacing: "0%",
-                      color: "#1763DB",
-                    }}
-                  >
-                    225+
-                  </span>
-                  <span
-                    className="text-[5.59px] sm:text-[22.47px] font-medium leading-[6.15px] sm:leading-[24.72px] text-center"
-                    style={{
-                      fontFamily: "Inter",
-                      letterSpacing: "-3%",
-                      color: "#C4C4C4",
-                    }}
-                  >
-                    Properties Refurbished
-                  </span>
-                </div>
-
-                {/* Divider */}
-                <div
-                  className="w-[1.61px] h-[60px] sm:h-[121.04px] flex-none flex-grow-0"
-                  style={{
-                    background:
-                      "radial-gradient(50% 50% at 50% 50%, #1763DB 0%, rgba(255, 255, 255, 0) 100%)",
-                  }}
-                ></div>
-
-                {/* Item 4 */}
-                <div className="flex flex-col items-center min-w-[60px] sm:min-w-[100px]">
-                  <span
-                    className="text-[16.16px] sm:text-[65px] font-bold leading-[18.89px] sm:leading-[76px] text-center"
-                    style={{
-                      fontFamily: "Inter",
-                      letterSpacing: "0%",
-                      color: "#1763DB",
-                    }}
-                  >
-                    15+Yrs
-                  </span>
-                  <span
-                    className="text-[5.59px] sm:text-[22.47px] font-medium leading-[6.15px] sm:leading-[24.72px] text-center"
-                    style={{
-                      fontFamily: "Inter",
-                      letterSpacing: "-3%",
-                      color: "#C4C4C4",
-                    }}
-                  >
-                    Investment Experience
-                  </span>
-                </div>
+                    {/* Divider (skip after last item) */}
+                    {index !== stats.length - 1 && (
+                      <div
+                        className="w-[1.61px] h-[60px] sm:h-[80px] md:h-[100px] lg:h-[121.04px] flex-none flex-grow-0"
+                        style={{
+                          background:
+                            "radial-gradient(50% 50% at 50% 50%, #1763DB 0%, rgba(255, 255, 255, 0) 100%)",
+                        }}
+                      ></div>
+                    )}
+                  </React.Fragment>
+                ))}
               </div>
             </div>
 
