@@ -16,12 +16,6 @@ export const SectionByAnima = (): JSX.Element => {
     "INVESTORS",
   ];
 
-  const stats = [
-    { value: "$25M+", label: "Managed Assets" },
-    { value: "225+", label: "Housing Units" },
-    { value: "225+", label: "Properties Refurbished" },
-    { value: "15+Yrs", label: "Investment Experience" },
-  ];
 
   return (
 
