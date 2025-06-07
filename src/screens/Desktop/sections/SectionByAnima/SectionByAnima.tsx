@@ -41,12 +41,12 @@ export const SectionByAnima = (): JSX.Element => {
           <div className="flex flex-col justify-between h-full w-full max-w-[1440px] mx-auto">
             <div className="flex items-center justify-between w-full mt-[50px]">
               <div className="font-display font-medium text-[29.39px] md:text-[42.24px] leading-[44px] tracking-[0] uppercase text-white">VFMT.</div>
-              <div className="flex items-center justify-end lg:justify-between w-full max-w-[1022px]">
+              <div className="flex items-center justify-end lg:justify-between max-w-[1022px]">
                 <nav className="hidden lg:flex items-center justify-between w-full">
-                  <ul className="flex items-center gap-[35px]">
+                  <ul className="flex items-center lg:gap-[10px] xl:gap-[35px]">
                     {navItems.map((item, index) => (
                       <li key={index} className="inline-block mr-6">
-                        <span className="font-display font-medium text-[16px] leading-[24px] tracking-[0] uppercase align-middle text-white">
+                        <span className="font-display font-medium text-[14px] xl:text-[16px] leading-[24px] tracking-[0] uppercase align-middle text-white">
                           {item}
                         </span>
                       </li>
