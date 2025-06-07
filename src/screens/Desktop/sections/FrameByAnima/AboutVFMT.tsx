@@ -38,7 +38,7 @@ function AboutVFMT() {
                         </div>
                         <div className="w-full h-full items-center justify-center lg:w-[47%] flex flex-col gap-4 order-2 md:order-2">
                             <div className="relative w-full h-auto mt-6 md:mt-8 lg:mt-0">
-                               <img src='/Group1.svg'></img>
+                               <img src='/Group1.webp'></img>
                             </div>
                         </div>
                     </div>
