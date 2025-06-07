@@ -16,6 +16,14 @@ function Corefetures() {
         "Continuous financial reporting and portfolio oversight",
         "Long-term property performance tracking",
     ]
+
+    const [activeText, setActiveText] = useState(tabs[0].label);
+
+    const handleSubTabClick = (tabId: string) => {
+        setActiveTab(tabId);
+        // If you need to set active text, find the tab by id
+        setActiveText(tabs.find(tab => tab.id === tabId)?.label ?? "");
+    }
     return (
         <section className="flex justify-center items-center w-full bg-white">
             <div className="flex flex-col md:flex-row justify-center items-center w-full px-4 sm:px-8 max-w-[1440px] mx-auto py-6 sm:py-10 lg:py-[100px] gap-6">
@@ -41,7 +49,7 @@ function Corefetures() {
                             {tabs.map((tab) => (
                                 <button
                                     key={tab.id}
-                                    onClick={() => setActiveTab(tab.id)}
+                                    onClick={() => handleSubTabClick(tab.id)}
                                     className={`relative h-[23.07px] sm:h-[44px] px-[8px] sm:px-[20px] rounded-[40px] border whitespace-nowrap transition-all duration-200 font-['Inter Display'] font-[500] tracking-[0px] text-[9px] leading-[13px] sm:text-[16px] sm:leading-[24px]  ${activeTab === tab.id
                                         ? "bg-white text-[#1763DB] border-[#1763DB]"
                                         : "bg-white text-[#898e9b] border-[#1763DB26] hover:text-[#637087]"}
@@ -66,7 +74,7 @@ function Corefetures() {
                                 </div>
                                 <div>
                                     <h3 className="text-lg sm:text-2xl font-bold text-[#000000] mb-2 sm:mb-4">
-                                        Asset Management
+                                        {activeText || "Asset Management"}
                                     </h3>
                                     <p className="text-[#637087] text-sm sm:text-lg leading-relaxed">
                                         We focus on enhancing each property's value through proactive management strategies. From minimizing
