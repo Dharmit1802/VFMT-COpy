@@ -26,7 +26,7 @@ export const SectionByAnima = (): JSX.Element => {
   return (
 
     <section className="w-[100vw] h-[90vh] xs:h-[75vh] md:h-[100vh] bg-cover bg-center relative">
-      <div className="backdrop-blur-sm absolute top-0 left-0 w-full h-full [background-image:linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/heroImage.jpg')] bg-cover bg-center content-center"></div>
+      <div className="backdrop-blur-sm absolute top-0 left-0 w-full h-full [background-image:linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/heroImage.webp')] bg-cover bg-center content-center"></div>
       <div className="w-full h-full relative items-center justify-center flex flex-col">
         <div className="h-full w-full px-4">
           <div className="flex flex-col justify-between h-full w-full max-w-[1440px] mx-auto">
