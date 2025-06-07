@@ -105,7 +105,7 @@ body{
 /* Small mobile devices */
 @media only screen and (max-width: 480px) {
     .h1_mob_title {
-        font-size: 28px;
+        font-size: 27px;
         letter-spacing: -0.5px;
         line-height: 36px;
     }

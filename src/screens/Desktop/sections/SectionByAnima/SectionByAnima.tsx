@@ -78,7 +78,7 @@ export const SectionByAnima = (): JSX.Element => {
 
               {/* Transforming Communities Section */}
               <div className="flex flex-col items-center gap-4 w-full">
-                <h1 className="typo text-white h1_mob_title">
+                <h1 className="typo text-[27px] md:text-[56px] lg:text-[86px] text-white h1_mob_title">
                   Transforming Communities. Maximizing Returns.
                 </h1>
                 <p className="w-full lg:w-[819px] text-base lg:text-xl text-white text-center leading-relaxed px-4">
@@ -87,17 +87,18 @@ export const SectionByAnima = (): JSX.Element => {
 
               </div>
 
-              <div className="flex lg:flex-row justify-center gap-4 lg:gap-[12px] items-center w-full lg:w-auto btn_mobile">
-                <Button className="h-12 px-5 bg-[#1663db] rounded-lg w-fit lg:w-auto">
-                  <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-base leading-6">
+              <div className="flex lg:flex-row justify-center gap-4 lg:gap-[12px] items-center w-full lg:w-auto">
+                <button
+                  className="flex items-center justify-center h-[32px] lg:h-[48px] px-[13px] lg:px-[20px] bg-[#1663db] rounded-[5.33px] max-w-[320px] lg:max-w-[480px] min-w-[56px] lg:min-w-[84px] w-fit "
+                >
+                  <span className="font-['Space_Grotesk'] font-medium text-white text-[11px] md:text-base leading-6">
                     Explore Properties
                   </span>
-                </Button>
+                </button>
                 <Button
-                  variant="outline"
-                  className="h-12 px-5 bg-[#eff2f4] border-none rounded-lg w-fit lg:w-auto"
+                  className="flex items-center justify-center h-[32px] lg:h-[48px] px-[13px] lg:px-[20px] bg-white rounded-[5.33px] max-w-[320px] lg:max-w-[480px] min-w-[56px] lg:min-w-[84px] w-fit "
                 >
-                  <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-[#111416] text-base leading-6">
+                  <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-[#111416] text-[11px] md:text-base  leading-6">
                     Partner with Us
                   </span>
                 </Button>
@@ -107,9 +108,10 @@ export const SectionByAnima = (): JSX.Element => {
 
 
             <div
-              className=" sm:h-[220px] rounded-t-[10px] md:rounded-t-[40px] py-[10px] lg:py-[32px] bg-white w-full px-[2px] [@media(min-width:400px)]:px-[20px] sm:px-[85px] max-w-full"
+              className="rounded-t-[9.94px] md:rounded-t-[40px] py-[6.96px] px-[17.13px] md:px-[85px] lg:py-[32px] bg-white w-full max-w-full top-[453px] left-[16px] sm:top-0 sm:left-0"
+
             >
-              <div className="w-full flex flex-row gap-[15px] sm:gap-[40px] justify-around items-center h-full">
+              <div className="w-full flex flex-row gap-[10px] sm:gap-[40px] justify-around items-center h-full">
                 {/* Item 1 */}
                 <div className="flex flex-col items-center min-w-[60px] sm:min-w-[100px]">
                   <span

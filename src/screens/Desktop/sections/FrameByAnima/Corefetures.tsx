@@ -36,13 +36,13 @@ function Corefetures() {
                     {/* Tabs */}
                     <div className="w-full flex justify-center items-center">
                         <div
-                            className="flex flex-row justify-center items-center w-[360px] h-[23.07px] gap-[3.02px] sm:w-[711px] sm:h-[44px] sm:gap-[12px]"
+                            className="flex flex-row justify-center items-center h-[23.07px] gap-[3.02px] sm:h-[44px] md:gap-[12px]"
                         >
                             {tabs.map((tab) => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`relative h-[23.07px] sm:h-[44px] px-[10px] sm:px-[20px] rounded-[40px] border whitespace-nowrap transition-all duration-200 font-['Inter Display'] font-[500] tracking-[0px] text-[9px] leading-[13px] sm:text-[16px] sm:leading-[24px]  ${activeTab === tab.id
+                                    className={`relative h-[23.07px] sm:h-[44px] px-[8px] sm:px-[20px] rounded-[40px] border whitespace-nowrap transition-all duration-200 font-['Inter Display'] font-[500] tracking-[0px] text-[9px] leading-[13px] sm:text-[16px] sm:leading-[24px]  ${activeTab === tab.id
                                         ? "bg-white text-[#1763DB] border-[#1763DB]"
                                         : "bg-white text-[#898e9b] border-[#1763DB26] hover:text-[#637087]"}
 `}

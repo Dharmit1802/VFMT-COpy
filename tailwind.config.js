@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: "410px",
+        xs: "380px",
       },
       colors: {
         "blue-400": "var(--blue-400)",
