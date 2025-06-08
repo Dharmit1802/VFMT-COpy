@@ -32,7 +32,7 @@ export function Button2({
     <Component
       className={cn(
         // Badge styles: frosted glass effect
-        "flex w-full max-w-fit items-center justify-center gap-2 bg-[#ffffff21] rounded-[20px] border-[none] backdrop-blur-[47px] p-[1px] backdrop-brightness-[100%] relative overflow-hidden",
+        "flex w-full max-w-fit items-center justify-center gap-2 bg-[#ffffff21] rounded-[20px] border-[none] backdrop-blur-[47px] p-[2px] backdrop-brightness-[100%] relative overflow-hidden",
         containerClassName
       )}
       style={{
