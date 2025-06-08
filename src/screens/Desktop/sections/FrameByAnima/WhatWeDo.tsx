@@ -151,8 +151,14 @@ function WhatWeDo() {
                                 <h3 className="text-white text-lg font-medium">{card.title}</h3>
                                 <p className="text-[#8193b3] text-sm mt-1">{card.description}</p>
                                 <div className="flex items-center gap-[7px] mt-1.5 cursor-pointer">
-                                    <span className="text-white text-[15px] font-medium">Read more</span>
-                                    <img src={card.arrowIcon} alt="arrow" className="w-5 h-5" />
+                                    <button className="flex items-center space-x-2 group">
+                                        <span className="text-white text-[15px] font-medium">Read more</span>
+                                        <img
+                                            src={card.arrowIcon}
+                                            alt="arrow"
+                                            className="w-5 h-5 transform rotate-0 group-hover:rotate-45 transition-transform duration-300 ease-in-out"
+                                        />
+                                    </button>
                                 </div>
                             </div>
                         </div>

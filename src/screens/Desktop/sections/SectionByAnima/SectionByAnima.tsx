@@ -1,11 +1,14 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
-import { motion } from "framer-motion"
+import { Button2 } from "../../../../components/ui/moving-border";
+import { motion, AnimatePresence } from "framer-motion"
 import CountUp from "react-countup";
 
 export const SectionByAnima = (): JSX.Element => {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const navItems = [
     "HOME",
@@ -61,46 +64,132 @@ export const SectionByAnima = (): JSX.Element => {
   return (
 
     <section className="w-[100vw] h-[90vh] xs:h-[75vh] md:h-[880px] lg:h-[1020px] bg-cover bg-center relative">
-      <div className="backdrop-blur-sm absolute top-0 left-0 w-full h-full [background-image:linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/heroImage.webp')] bg-cover bg-center content-center"></div>
+      <div
+        className="parallax backdrop-blur-sm absolute top-0 left-0 w-full h-full content-center"
+        style={{
+          backgroundImage: "linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/heroImage.webp')",
+        }}
+      ></div>
       <div className="w-full h-full relative items-center justify-center flex flex-col">
         <div className="h-full w-full px-4">
           <div className="flex flex-col justify-between h-full w-full max-w-[1440px] mx-auto">
-            <div className="flex items-center justify-between w-full mt-[50px]">
-              <div className="font-display font-medium text-[29.39px] md:text-[32.24px] leading-[44px] tracking-[0] uppercase text-white">VFMT.</div>
+            <div className="flex items-center justify-between w-full mt-[30px] lg:mt-[50px] relative z-50">
+              {/* Logo */}
+              <div className="font-display font-medium text-[25.39px] md:text-[28.24px] leading-[40px] tracking-[0] uppercase text-white hover:text-[#287aff] cursor-pointer transition-colors duration-300 ease-in-out">
+                VFMT.
+              </div>
+
+              {/* Nav + Buttons */}
               <div className="flex items-center justify-end lg:justify-between max-w-[1022px]">
+                {/* Desktop Nav */}
                 <nav className="hidden lg:flex items-center justify-between w-full">
+
                   <ul className="flex items-center lg:gap-[10px] xl:gap-[35px]">
                     {navItems.map((item, index) => (
-                      <li key={index} className="inline-block mr-6">
-                        <span className="font-display font-medium text-[14px] xl:text-[16px] leading-[24px] tracking-[0] uppercase align-middle text-white">
-                          {item}
+                      <li key={index} className="SMN_effect-40 inline-block mr-6 group relative">
+                        <span className="cursor-pointer font-display  text-[12px] xl:text-[14px] leading-[24px] tracking-[0] uppercase align-middle text-white">
+                          <a>{item}</a>
                         </span>
                       </li>
                     ))}
                   </ul>
+
                 </nav>
+
+                {/* Desktop Buttons */}
                 <div className="hidden lg:flex items-center gap-6 ml-8">
-                  <Button variant="link" className="text-white p-0 h-auto">
+                  <Button variant="link" className="btn-0 btn-1 overflow-hidden text-white no-underline p-3 h-auto">
                     <span className="[font-family:'Inter_Display-Medium',Helvetica] font-medium text-base">
                       LOG IN
                     </span>
                   </Button>
-                  <button className="bg-[#1763DB] w-[177px] h-[48px] rounded-[8px] flex items-center justify-center text-white text-[16px] leading-[24px] font-medium uppercase font-display">
+                  <button className="shrink-border w-[177px] h-[48px] rounded-[8px] flex items-center justify-center text-white text-[16px] leading-[24px] font-medium uppercase font-display
+              relative transition-all duration-500 ease-in-out transform hover:scale-[1.01] active:scale-95
+              bg-gradient-to-r from-[#1763DB] via-[#1763DB] to-[#1763DB] hover:from-[#1e70f1] hover:via-[#1e70f1] hover:to-[#1e70f1]">
                     Invest Now
                   </button>
-
                 </div>
-                <div className="lg:hidden block">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="36" height="36" rx="6" fill="white" />
-                    <path d="M11 13H24.5" stroke="#1763DB" stroke-width="2" stroke-linecap="round" />
-                    <path opacity="0.34" d="M11 18H24.5" stroke="#1763DB" stroke-width="2" stroke-linecap="round" />
-                    <path d="M11 23H24.5" stroke="#1763DB" stroke-width="2" stroke-linecap="round" />
-                  </svg>
 
+                {/* Mobile Hamburger */}
+                <div className="lg:hidden block">
+                  <button onClick={() => setIsSidebarOpen(true)}>
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="36" height="36" rx="6" fill="white" />
+                      <path d="M11 13H24.5" stroke="#1763DB" strokeWidth="2" strokeLinecap="round" />
+                      <path opacity="0.34" d="M11 18H24.5" stroke="#1763DB" strokeWidth="2" strokeLinecap="round" />
+                      <path d="M11 23H24.5" stroke="#1763DB" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
+
+            {/* Sidebar Overlay */}
+            <AnimatePresence>
+              {isSidebarOpen && (
+                <>
+                  {/* Background overlay */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.5 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="fixed inset-0 bg-black z-40"
+                    onClick={() => setIsSidebarOpen(false)}
+                  />
+
+                  {/* Sidebar */}
+                  <motion.div
+                    initial={{ x: "100%" }}
+                    animate={{ x: 0 }}
+                    exit={{ x: "100%" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="fixed top-0 right-0 h-full w-[80%] sm:w-[400px] bg-white shadow-lg z-50 flex flex-col items-start justify-start p-8 space-y-8"
+                  >
+                    {/* Close Button */}
+                    <button
+                      onClick={() => setIsSidebarOpen(false)}
+                      className="absolute top-4 right-4 text-black text-3xl font-bold"
+                    >
+                      ×
+                    </button>
+
+                    {/* Nav Items */}
+                    <ul className="flex flex-col justify-start items-start space-y-6">
+                      {navItems.map((item, index) => (
+                        <li
+                          key={index}
+                          className="group cursor-pointer"
+                          onClick={() => setIsSidebarOpen(false)} // close sidebar on click
+                        >
+                          <span
+                            className="font-display font-medium text-[14px] xl:text-[16px] leading-[24px] tracking-[0] uppercase align-middle text-black relative
+          after:content-[''] after:absolute after:bottom-[-2px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-in-out group-hover:after:w-full hover:text-blue-500"
+                          >
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+
+                    {/* Login Button */}
+                    <Button variant="link" className="btn-0 btn-1 overflow-hidden text-black no-underline  h-auto">
+                      <span className="[font-family:'Inter_Display-Medium',Helvetica] font-medium text-base text-black hover:text-white">
+                        LOG IN
+                      </span>
+                    </Button>
+
+                    {/* Invest Now Button */}
+                    <button onClick={() => setIsSidebarOpen(false)} className="w-[177px] h-[48px] rounded-[8px] flex items-center justify-center text-white text-[16px] leading-[24px] font-medium uppercase font-display
+                relative transition-all duration-500 ease-in-out transform hover:scale-[1.01] active:scale-95
+                bg-gradient-to-r from-[#1763DB] via-[#1763DB] to-[#1763DB] hover:from-[#1e70f1] hover:via-[#1e70f1] hover:to-[#1e70f1]">
+                      Invest Now
+                    </button>
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
 
             {/* Middle Container: Eyebrow Tag Label and Transforming Communities */}
             <motion.div initial={{ scale: 0, opacity: 0 }}
@@ -109,38 +198,45 @@ export const SectionByAnima = (): JSX.Element => {
                 type: "tween",
                 duration: 0.5
               }} className="w-full flex flex-col items-center gap-[32px] lg:gap-[48px]">
-              {/* Small Eyebrow Tag Label */}
-              <Badge className="flex w-full max-w-fit items-center justify-center gap-2 px-3 py-2 bg-[#ffffff21] rounded-[20px] border-[none] backdrop-blur-[47px] backdrop-brightness-[100%[-webkit-backdrop-filter:blur(47px)_brightness(100%)]">
+
+              <Button2><Badge className="flex bg-gray-400 w-full max-w-fit items-center justify-center gap-2 px-3 py-2 bg-[#ffffff21] rounded-[20px] border-[none] backdrop-blur-[47px] backdrop-brightness-[100%[-webkit-backdrop-filter:blur(47px)_brightness(100%)]">
                 <span className="font-medium text-[10px] md:text-[12px] lg:text-[16px] leading-[16px] text-center px-4 sm:text-base sm:leading-[25.6px]">
                   🎉 Transforming Midwest Real Estate—25% ROI Delivered.
                 </span>
-              </Badge>
+              </Badge></Button2>
+
+
+
 
               {/* Transforming Communities Section */}
               <div className="flex flex-col items-center gap-4 w-full">
+                {/* Mobile: static title */}
+                <h1 className="md:hidden block typo text-[27px] md:text-[56px] lg:text-[86px] text-white h1_mob_title text-center ">
+                  Transforming Communities. Maximizing Returns.
+                </h1>
+
+                {/* Desktop: animated title */}
                 <motion.h1
                   variants={container}
                   initial="hidden"
                   animate="show"
-                  className="typo text-[26px] md:text-[56px] lg:text-[86px] text-white h1_mob_title flex flex-wrap justify-center text-center"
+                  className="hidden md:flex typo text-[56px] lg:text-[86px] text-white flex-wrap justify-center text-center"
                 >
                   {text.split(" ").map((word, index) => (
-  <span key={index} className="inline-block mr-2"> {/* space between words */}
-    {word.split("").map((char, charIndex) => (
-      <motion.span
-        key={charIndex}
-        variants={child}
-        className="inline-block"
-      >
-        {char}
-      </motion.span>
-    ))}
-  </span>
-))}
-
-
-
+                    <span key={index} className="inline-block mr-2"> {/* space between words */}
+                      {word.split("").map((char, charIndex) => (
+                        <motion.span
+                          key={charIndex}
+                          variants={child}
+                          className="inline-block"
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                    </span>
+                  ))}
                 </motion.h1>
+
                 <p className="w-full lg:w-[819px] text-base lg:text-xl text-white text-center leading-relaxed px-4">
                   Investing in sustainable real estate that uplifts neighborhoods while delivering strong, long-term value for our partners.
                 </p>
@@ -149,16 +245,20 @@ export const SectionByAnima = (): JSX.Element => {
 
               <div className="flex lg:flex-row justify-center gap-4 lg:gap-[12px] items-center w-full lg:w-auto">
                 <button
-                  className="flex items-center justify-center h-[32px] lg:h-[48px] px-[13px] lg:px-[20px] bg-[#1663db] rounded-[5.33px] max-w-[320px] lg:max-w-[480px] min-w-[56px] lg:min-w-[84px] w-fit "
+                  className="[font-family:'Space_Grotesk',Helvetica] text-[11px] md:text-base flex relative transition-all duration-500 ease-in-out transform shrink-border items-center justify-center h-[32px] lg:h-[48px] px-[13px] lg:px-[20px] bg-[#1663db] rounded-[5.33px] max-w-[320px] lg:max-w-[480px] min-w-[56px] lg:min-w-[84px] w-fit hover:scale-[1.01] active:scale-95
+              bg-gradient-to-r from-[#1763DB] via-[#1763DB] to-[#1763DB] hover:from-[#1e70f1] hover:via-[#1e70f1] hover:to-[#1e70f1]"
                 >
-                  <span className="font-['Space_Grotesk'] font-medium text-white text-[11px] md:text-base leading-6">
-                    Explore Properties
-                  </span>
+                  Explore Properties
                 </button>
+
+
+
                 <Button
-                  className="flex items-center justify-center h-[32px] lg:h-[48px] px-[13px] lg:px-[20px] bg-white rounded-[5.33px] max-w-[320px] lg:max-w-[480px] min-w-[56px] lg:min-w-[84px] w-fit "
+                  className="btn-0 overflow-hidden flex items-center justify-center h-[32px] lg:h-[48px] px-[13px] lg:px-[20px] bg-white rounded-[5.33px] max-w-[320px] lg:max-w-[480px] min-w-[56px] lg:min-w-[84px] w-fit"
                 >
-                  <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-[#111416] text-[11px] md:text-base  leading-6">
+                  <span
+                    className=" [font-family:'Space_Grotesk',Helvetica] font-medium text-[#111416] text-[11px] md:text-base leading-6 relative transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-blue-100 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full"
+                  >
                     Partner with Us
                   </span>
                 </Button>
@@ -183,7 +283,9 @@ export const SectionByAnima = (): JSX.Element => {
                         {prefix}
                         <CountUp
                           end={parseFloat(numberPart.replace(/,/g, ""))}
-                          duration={5}
+                          duration={2} // smoother and faster
+                          useEasing={true}
+
                         />
                         {suffix}
                       </span>
@@ -214,3 +316,4 @@ export const SectionByAnima = (): JSX.Element => {
     </section>
   );
 };
+

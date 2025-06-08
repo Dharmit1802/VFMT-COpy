@@ -4,15 +4,43 @@
 .container{
     max-width: 1920px;
 }
+.btn1 {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 150px 9px;
+  transition: background-position 0.5s ease, padding-left 0.5s ease;
+  width: 150px;
+  height: 40px;
+  /* border: 4px solid #000; */
+  font-size: 16px;
+  padding: 1px 7px 1px 7px;
+}
 
+.btn1:hover {
+  transition: background-position 0.5s ease, padding-left 0.5s ease;
+  background-position: 113px 9px;
+  padding-left: 0;
+}
 .typo{
     font-family: "Inter-Display", Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 84px;
+    font-size: 78px;
     line-height: 98px;
     letter-spacing: -5px;
     text-align: center;
 }
+.read-more-button {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath fill='%23ffffff' d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 140px 5px;
+  transition: background-position 0.5s ease, padding-left 0.5s ease;
+}
+
+.read-more-button:hover {
+  background-position: 113px 5px;
+  padding-left: 0 !important;
+}
+
 
 .text-font{
     font-family: "Inter", Helvetica, sans-serif;
@@ -107,7 +135,7 @@ body{
 /* Small mobile devices */
 @media only screen and (max-width: 480px) {
     .h1_mob_title {
-        font-size: 27px;
+        font-size: 24px;
         letter-spacing: -0.5px;
         line-height: 36px;
     }
@@ -136,7 +164,7 @@ body{
 /* Tablet responsive styles */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .typo {
-        font-size: 64px;
+        font-size: 54px;
         line-height: 72px;
         letter-spacing: -3px;
     }
@@ -144,4 +172,215 @@ body{
     .tablet-padding {
         padding: 0 32px;
     }
+}
+
+
+.SMN_effect-3 a:after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	content: '';
+	opacity: 0;
+	-webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+	transition: height 0.3s, opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.SMN_effect-3 a:hover:after, .SMN_effect-3 a:focus:after {
+	height: 5px;
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+.btn-0 {
+  position: relative;
+  color: #69a1f0; /* Tinted color from #1663db */
+  z-index: 1;
+}
+
+.btn-1{
+    color: white !important;
+}
+
+.btn-0::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0e3b87; /* 40% darker shade of #1663db */
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+  z-index: -1;
+}
+
+.btn-0:hover {
+  color: #d4e3fb; /* 75% tinted color for hover */
+}
+
+.btn-0:hover::before {
+  transform: translateX(0);
+}
+
+
+.shrink-border {
+  background-color: transparent;
+color: white;
+}
+.shrink-border:hover {
+  background-color: transparent;
+  box-shadow: none;
+  color: #e6e6e6;
+}
+.shrink-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s, border 0.3s;
+}
+.shrink-border:hover::before {
+  opacity: 0;
+}
+.shrink-border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 3px solid #e6e6e6;
+  border-radius: 5px;
+  opacity: 0;
+  z-index: -1;
+  transform: scaleX(1.1) scaleY(1.3);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.shrink-border:hover::after {
+  opacity: 1;
+  transform: scaleX(1) scaleY(1);
+}
+
+
+
+
+.shrink-border-1 {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent; /* we will fake blue bg with ::before */
+  border-radius: 5.33px;
+  color: white;
+}
+
+.shrink-border-1 ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1663db; /* your blue background */
+  border: 3px solid #1b1b20;
+  transition: opacity 0.3s, border 0.3s;
+  z-index: 0;
+}
+
+.shrink-border-1 :hover::before {
+  opacity: 0;
+}
+
+.shrink-border-1 ::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1663db; /* blue bg stays consistent */
+  border: 3px solid #e6e6e6;
+  opacity: 0;
+  z-index: 1;
+  transform: scaleX(1.1) scaleY(1.3);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.shrink-border-1 :hover::after {
+  opacity: 1;
+  transform: scaleX(1) scaleY(1);
+}
+
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+
+.SMN_effect-40 a:before {
+	content: "";
+	display: inline-block;
+	font-family: "FontAwesome";
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	left: -10px;
+	line-height: 1;
+	opacity: 0;
+	position: absolute;
+	text-transform: none;
+	top: 32px;
+	transform: rotate(-45deg);
+	transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+	visibility: hidden;
+}
+
+.SMN_effect-40 a:after {
+	bottom: 0;
+	content: "";
+	height: 2px;
+	left: 0px;
+	position: absolute;
+	transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+	width: 0;
+}
+
+.SMN_effect-40 a:after {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.SMN_effect-40 a:after {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.SMN_effect-40 a:hover {
+	color: #2a4365;
+}
+
+.SMN_effect-40 a:hover:before {
+	left: -15px;
+	opacity: 1;
+	top: 0;
+	visibility: visible;
+}
+
+.SMN_effect-40 a:hover:after {
+	width: 100%;
+}
+
+.parallax-bg {
+  will-change: transform;
 }

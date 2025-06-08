@@ -1,8 +1,17 @@
 import React from 'react';
+import { motion } from "framer-motion";
+
 
 function AboutVFMT() {
     return (
-        <section className="flex justify-center items-center w-full bg-white">
+
+        <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex justify-center items-center w-full bg-white"
+        >
             <div className="flex flex-col md:flex-row justify-center items-center w-full px-[10px] max-w-[1440px] mx-auto py-[30px] md:py-[60px] lg:py-[100px] gap-[24px]">
                 <div className="h-full w-full">
                     <div className="flex flex-col items-center justify-between lg:flex-row gap-[24px]">
@@ -29,22 +38,22 @@ function AboutVFMT() {
                                         <br className="hidden md:block" /><br className="hidden md:block" />
                                         <span className="block mt-4 md:mt-0">We pride ourselves on creating sustainable, affordable housing that meets real community needs while helping our investors build wealth with purpose. At VFMT Realty, we believe that real estate is more than just returns — it's about impact.</span>
                                     </p>
-
-                                    <button className="w-full md:w-auto lg:w-[190px] h-12 md:h-14 bg-[#1663db] rounded-lg text-white text-base md:text-lg font-medium hover:bg-[#1450b8] transition-colors">
-                                        Read more
-                                    </button>
+                                                        <button className="btn1 w-full md:w-auto lg:w-[190px] h-12 md:h-14 bg-[#1663db] rounded-lg text-white text-base md:text-lg font-medium
+  transition-colors duration-300 ease-in-out transform active:scale-95">
+  Read more
+</button>
                                 </div>
                             </div>
                         </div>
                         <div className="w-full h-full items-center justify-center lg:w-[47%] flex flex-col gap-4 order-2 md:order-2">
                             <div className="relative w-full h-auto mt-6 md:mt-8 lg:mt-0">
-                               <img src='/Group1.webp'></img>
+                                <img src='/Group1.webp'></img>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
 
